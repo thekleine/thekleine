@@ -1,0 +1,2937 @@
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.6463ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.7672ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-22 20:55:42 +0100
+Creating scope :root. Overwriting existing method Locomotive::Page.root.
+Processing by Locomotive::Public::PagesController#show as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.8738ms)
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.7071ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_accounts", :query=>{}} (0.6785ms)
+Redirected to http://localhost:8080/locomotive/installation
+Filter chain halted as :require_site rendered or redirected
+Completed 302 Found in 73.2ms
+
+
+Started GET "/locomotive/installation" for 127.0.0.1 at 2014-02-22 20:55:43 +0100
+Processing by Locomotive::InstallationController#show as HTML
+  Parameters: {"step"=>1}
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.7672ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{}} (0.5772ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/installation/step_1.html.haml within /locomotive/layouts/not_logged_in (2191.7ms)
+Compiled jquery.js  (6ms)  (pid 15375)
+Compiled locomotive/not_logged_in.js  (456ms)  (pid 15375)
+Compiled locomotive/blueprint/screen.css  (0ms)  (pid 15375)
+Compiled locomotive/font-awesome.css  (779ms)  (pid 15375)
+Compiled locomotive/not_logged_in/installation.css  (4277ms)  (pid 15375)
+Compiled locomotive/not_logged_in/layout.css  (3295ms)  (pid 15375)
+Compiled locomotive/not_logged_in.css  (8443ms)  (pid 15375)
+Completed 200 OK in 11540.9ms (Views: 11535.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /jquery.js - 200 OK (16ms)
+
+
+Started GET "/assets/locomotive/not_logged_in.js?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/not_logged_in.js - 200 OK (15ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/blueprint/screen.css - 200 OK (166ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/font-awesome.css - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/not_logged_in/installation.css?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/not_logged_in/installation.css - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/not_logged_in/layout.css?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/not_logged_in/layout.css - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/not_logged_in.css?body=1" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/not_logged_in.css - 200 OK (25ms)
+
+
+Started GET "/assets/locomotive/background/body.png" for 127.0.0.1 at 2014-02-22 20:55:55 +0100
+Served asset /locomotive/background/body.png - 200 OK (12ms)
+
+
+Started POST "/locomotive/installation/1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Processing by Locomotive::InstallationController#show as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcR9+imQDDuTjH2o4w4+w06kBoCVfhopyzdZ4YkE1mE=", "account"=>{"name"=>"thekleine", "email"=>"david@thekleine.ch", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account", "step"=>"1"}
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.8259ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{}} (0.6630ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"email"=>"david@thekleine.ch"} flags=[] limit=1 skip=0 batch_size=nil fields={:_id=>1} (0.8407ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=locomotive_dev collection=locomotive_accounts documents=[{"_id"=>"530900e6ae6ac250ff000001", "email"=>"david@thekleine.ch", "encrypted_password"=>"32860cab974cce070197d6443353f605442f1502", "sign_in_count"=>0, "locale"=>"en", "name"=>"thekleine", "password_salt"=>"vkWwX7TD4qd7H5VRxPMD", "api_key"=>"92821254a29b1787ac178c0552dd708a42fe4940", "updated_at"=>2014-02-22 19:56:22 UTC, "created_at"=>2014-02-22 19:56:22 UTC}] flags=[] (0.3991ms)
+Redirected to http://localhost:8080/locomotive/installation/2
+Completed 302 Found in 143.4ms
+
+
+Started GET "/locomotive/installation/2" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Processing by Locomotive::InstallationController#show as HTML
+  Parameters: {"step"=>"2"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{}} (1.5557ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/installation/step_2.html.haml within /locomotive/layouts/not_logged_in (34.3ms)
+Completed 200 OK in 51.9ms (Views: 48.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/locomotive/not_logged_in.js?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /locomotive/not_logged_in.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /locomotive/blueprint/screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /locomotive/font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/not_logged_in/installation.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /locomotive/not_logged_in/installation.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/not_logged_in/layout.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /locomotive/not_logged_in/layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/not_logged_in.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:22 +0100
+Served asset /locomotive/not_logged_in.css - 304 Not Modified (2ms)
+
+
+Started POST "/locomotive/installation/2" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Processing by Locomotive::InstallationController#show as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcR9+imQDDuTjH2o4w4+w06kBoCVfhopyzdZ4YkE1mE=", "site"=>{"name"=>"thekleine.ch", "locales"=>["de"]}, "commit"=>"Create site", "step"=>"2"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{}} (2.0027ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.2348ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=locomotive_dev collection=locomotive_sites documents=[{"_id"=>"530900f5ae6ac250ff000002", "locales"=>["de"], "timezone_name"=>"UTC", "name"=>"thekleine.ch", "updated_at"=>2014-02-22 19:56:37 UTC, "created_at"=>2014-02-22 19:56:37 UTC, "memberships"=>[{"_id"=>"530900f5ae6ac250ff000003", "role"=>"admin", "account_id"=>"530900e6ae6ac250ff000001"}]}] flags=[] (0.5252ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"site_id"=>"530900f5ae6ac250ff000002", "parent_id"=>nil, "$or"=>[{"slug.de"=>"index"}]} flags=[] limit=1 skip=0 batch_size=nil fields={:_id=>1} (1.5340ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"parent_id"=>nil, "site_id"=>"530900f5ae6ac250ff000002", "_id"=>{"$ne"=>"530900f5ae6ac250ff000004"}, "position"=>{"$ne"=>nil}}, "$orderby"=>{"position"=>1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil (1.3330ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=locomotive_dev collection=locomotive_pages documents=[{"_id"=>"530900f5ae6ac250ff000004", "parent_ids"=>[], "depth"=>0, "template_dependencies"=>{"de"=>[]}, "snippet_dependencies"=>{"de"=>[]}, "redirect_type"=>301, "listed"=>true, "cache_strategy"=>"none", "response_type"=>"text/html", "published"=>true, "templatized"=>false, "templatized_from_parent"=>false, "redirect"=>false, "raw_template"=>{"de"=>"Inhalt der Startseite"}, "site_id"=>"530900f5ae6ac250ff000002", "slug"=>{"de"=>"index"}, "title"=>{"de"=>"Startseite"}, "serialized_template"=>{"de"=>#<Moped::BSON::Binary type=:generic length=103>}, "position"=>0, "fullpath"=>{"de"=>"index"}, "locales"=>[:de], "updated_at"=>2014-02-22 19:56:37 UTC, "created_at"=>2014-02-22 19:56:37 UTC}] flags=[] (0.6244ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"parent_id"=>"530900f5ae6ac250ff000004"}, "$orderby"=>{"position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.9525ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002", "template_dependencies.de"=>{"$in"=>["530900f5ae6ac250ff000004"]}}, "$orderby"=>{"position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.7370ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=locomotive_dev collection=locomotive_pages selector={"parent_ids"=>{"$in"=>["530900f5ae6ac250ff000004"]}} update={"$set"=>{"templatized"=>false, "templatized_from_parent"=>false, "target_klass_name"=>nil}} flags={:multi=>true} (0.3743ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"site_id"=>"530900f5ae6ac250ff000002", "parent_id"=>nil, "$or"=>[{"slug.de"=>"404"}]} flags=[] limit=1 skip=0 batch_size=nil fields={:_id=>1} (1.1580ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"parent_id"=>nil, "site_id"=>"530900f5ae6ac250ff000002", "_id"=>{"$ne"=>"530900f5ae6ac250ff000005"}, "position"=>{"$ne"=>nil}}, "$orderby"=>{"position"=>1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil (1.5893ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"parent_id"=>nil, "site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"position"=>-1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.9868ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=locomotive_dev collection=locomotive_pages documents=[{"_id"=>"530900f5ae6ac250ff000005", "parent_ids"=>[], "depth"=>0, "template_dependencies"=>{"de"=>[]}, "snippet_dependencies"=>{"de"=>[]}, "redirect_type"=>301, "listed"=>true, "cache_strategy"=>"none", "response_type"=>"text/html", "published"=>true, "templatized"=>false, "templatized_from_parent"=>false, "redirect"=>false, "raw_template"=>{"de"=>"Inhalt der 404 Seite"}, "site_id"=>"530900f5ae6ac250ff000002", "slug"=>{"de"=>"404"}, "title"=>{"de"=>"Seite nicht gefunden"}, "serialized_template"=>{"de"=>#<Moped::BSON::Binary type=:generic length=102>}, "position"=>1, "fullpath"=>{"de"=>"404"}, "locales"=>[:de], "updated_at"=>2014-02-22 19:56:37 UTC, "created_at"=>2014-02-22 19:56:37 UTC}] flags=[] (0.6447ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002", "template_dependencies.de"=>{"$in"=>["530900f5ae6ac250ff000005"]}}, "$orderby"=>{"position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.6957ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"parent_id"=>"530900f5ae6ac250ff000005"}, "$orderby"=>{"position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.8876ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=locomotive_dev collection=locomotive_pages selector={"parent_ids"=>{"$in"=>["530900f5ae6ac250ff000005"]}} update={"$set"=>{"templatized"=>false, "templatized_from_parent"=>false, "target_klass_name"=>nil}} flags={:multi=>true} (0.2968ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=locomotive_dev collection=locomotive_accounts selector={"_id"=>"530900e6ae6ac250ff000001"} update={"$set"=>{"locale"=>"de", "updated_at"=>2014-02-22 19:56:37 UTC}} flags=[] (0.3226ms)
+Redirected to http://localhost:8080/locomotive/sign_in
+Completed 302 Found in 304.6ms
+
+
+Started GET "/locomotive/sign_in" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Processing by Locomotive::SessionsController#new as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.1675ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.8793ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/sessions/new.html.haml within /locomotive/layouts/not_logged_in (30.7ms)
+Completed 200 OK in 62.2ms (Views: 51.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/locomotive/not_logged_in.js?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /locomotive/not_logged_in.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /locomotive/blueprint/screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /locomotive/font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/not_logged_in/installation.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /locomotive/not_logged_in/installation.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/not_logged_in/layout.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /locomotive/not_logged_in/layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/not_logged_in.css?body=1" for 127.0.0.1 at 2014-02-22 20:56:37 +0100
+Served asset /locomotive/not_logged_in.css - 304 Not Modified (1ms)
+
+
+Started POST "/locomotive/sign_in" for 127.0.0.1 at 2014-02-22 20:56:50 +0100
+Processing by Locomotive::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcR9+imQDDuTjH2o4w4+w06kBoCVfhopyzdZ4YkE1mE=", "locomotive_account"=>{"remember_me"=>"true", "email"=>"david@thekleine.ch", "password"=>"[FILTERED]"}, "commit"=>"Einloggen"}
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.3471ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.2550ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"email"=>"david@thekleine.ch"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.3530ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=locomotive_dev collection=locomotive_accounts selector={"_id"=>"530900e6ae6ac250ff000001"} update={"$set"=>{"remember_created_at"=>2014-02-22 19:56:50 UTC, "updated_at"=>2014-02-22 19:56:50 UTC}} flags=[] (0.3560ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=locomotive_dev collection=locomotive_accounts selector={"_id"=>"530900e6ae6ac250ff000001"} update={"$set"=>{"last_sign_in_at"=>2014-02-22 19:56:50 UTC, "current_sign_in_at"=>2014-02-22 19:56:50 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>"127.0.0.1", "sign_in_count"=>1, "updated_at"=>2014-02-22 19:56:50 UTC}} flags=[] (0.3819ms)
+Redirected to http://localhost:8080/locomotive/pages
+Completed 302 Found in 273.9ms
+
+
+Started GET "/locomotive/pages" for 127.0.0.1 at 2014-02-22 20:56:50 +0100
+Processing by Locomotive::PagesController#index as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.1520ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>"530900e6ae6ac250ff000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.9651ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (1.0684ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"depth"=>1, "position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (1.8935ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"position"=>1, "updated_at"=>-1}} flags=[:slave_ok] limit=5 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (1.8382ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (2.0154ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.8588ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/menu/_contents.html.haml (51.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/actions/_contents.html.haml (6.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/pages/_page.html.haml (20.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/pages/index.html.haml within /locomotive/layouts/application (214.7ms)
+Compiled locomotive/jquery/ui.css  (881ms)  (pid 15375)
+Compiled locomotive/jquery.tagit.css  (0ms)  (pid 15375)
+Compiled formtastic.css  (0ms)  (pid 15375)
+Compiled select2/select2.css  (679ms)  (pid 15375)
+Compiled codemirror.css  (1ms)  (pid 15375)
+Compiled codemirror/themes/neat.css  (0ms)  (pid 15375)
+Compiled locomotive/toggle.css  (1145ms)  (pid 15375)
+Compiled locomotive/liquid_mode.css  (1ms)  (pid 15375)
+Compiled locomotive/shared/_helpers.css  (1461ms)  (pid 15375)
+Compiled locomotive/shared/_picker.css  (2499ms)  (pid 15375)
+Compiled locomotive/shared/common.css  (1774ms)  (pid 15375)
+Compiled locomotive/shared/content_locale_picker.css  (2662ms)  (pid 15375)
+Compiled locomotive/shared/growl.css  (286ms)  (pid 15375)
+Compiled locomotive/backoffice/_box.css  (4362ms)  (pid 15375)
+Compiled locomotive/backoffice/_buttons.css  (1435ms)  (pid 15375)
+Compiled locomotive/backoffice/application.css  (9141ms)  (pid 15375)
+Compiled locomotive/backoffice/codemirror_changes.css  (1462ms)  (pid 15375)
+Compiled locomotive/backoffice/content_assets.css  (4265ms)  (pid 15375)
+Compiled locomotive/backoffice/datepicker.css  (1669ms)  (pid 15375)
+Compiled locomotive/backoffice/dialog_changes.css  (4393ms)  (pid 15375)
+Compiled locomotive/backoffice/editable_elements.css  (7854ms)  (pid 15375)
+Compiled locomotive/backoffice/formtastic_changes.css  (5499ms)  (pid 15375)
+Compiled locomotive/backoffice/layout.css  (4623ms)  (pid 15375)
+Compiled locomotive/backoffice/menu/sub.css  (802ms)  (pid 15375)
+WARNING: This version of the transform module has been deprecated and will be removed.
+         on line 3 of /var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/css3/_transform-legacy.scss
+         from line 5 of /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/assets/stylesheets/locomotive/backoffice/menu/main.css.scss
+
+Compiled locomotive/backoffice/menu/main.css  (802ms)  (pid 15375)
+Compiled locomotive/backoffice/menu/default.css  (701ms)  (pid 15375)
+Compiled locomotive/backoffice/menu.css  (2506ms)  (pid 15375)
+Compiled locomotive/backoffice/menu/_colors.css  (558ms)  (pid 15375)
+Compiled locomotive/backoffice/menu/_helpers.css  (13ms)  (pid 15375)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (2.5101ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (1.2820ms)
+
+
+Started GET "/locomotive/pages" for 127.0.0.1 at 2014-02-22 20:58:12 +0100
+Creating scope :root. Overwriting existing method Locomotive::Page.root.
+Processing by Locomotive::PagesController#index as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.2422ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>"530900e6ae6ac250ff000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.8204ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (1.4386ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"depth"=>1, "position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (1.7147ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"position"=>1, "updated_at"=>-1}} flags=[:slave_ok] limit=5 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (2.2521ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.9871ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.6988ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/menu/_contents.html.haml (140.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/actions/_contents.html.haml (6.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/pages/_page.html.haml (21.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/pages/index.html.haml within /locomotive/layouts/application (300.3ms)
+Compiled locomotive/backoffice/pagination.css  (3107ms)  (pid 15564)
+Compiled locomotive/backoffice/sites_picker.css  (2709ms)  (pid 15564)
+Compiled locomotive/backoffice/tagit_changes.css  (1479ms)  (pid 15564)
+Compiled locomotive.css  (7613ms)  (pid 15564)
+Compiled jquery-ui.js  (19ms)  (pid 15564)
+Compiled jquery_ujs.js  (1ms)  (pid 15564)
+Compiled underscore.js  (2ms)  (pid 15564)
+Compiled backbone.js  (2ms)  (pid 15564)
+Compiled codemirror.js  (5ms)  (pid 15564)
+Compiled tinymce/preinit.js  (3ms)  (pid 15564)
+Compiled tinymce/jquery.tinymce.js  (1ms)  (pid 15564)
+Compiled tinymce/tiny_mce.js  (4ms)  (pid 15564)
+Compiled tinymce-jquery.js  (92ms)  (pid 15564)
+Compiled select2/select2.js  (121ms)  (pid 15564)
+Compiled codemirror/addons/mode/overlay.js  (1ms)  (pid 15564)
+Compiled codemirror/modes/css.js  (1ms)  (pid 15564)
+Compiled codemirror/modes/javascript.js  (1ms)  (pid 15564)
+Compiled codemirror/modes/xml.js  (1ms)  (pid 15564)
+Compiled codemirror/modes/htmlmixed.js  (1ms)  (pid 15564)
+Compiled locomotive/ICanHandlebarz.js  (0ms)  (pid 15564)
+Compiled locomotive/backbone.modelbinding.js  (1ms)  (pid 15564)
+Compiled locomotive/backbone.sync.js  (0ms)  (pid 15564)
+Compiled locomotive/cmd.js  (1ms)  (pid 15564)
+Compiled locomotive/cookies.js  (1ms)  (pid 15564)
+Compiled locomotive/datepicker_i18n.js  (26ms)  (pid 15564)
+Compiled locomotive/editable_field.js  (1ms)  (pid 15564)
+Compiled locomotive/form_submit_notification.js  (1ms)  (pid 15564)
+Compiled locomotive/growl.js  (1ms)  (pid 15564)
+Compiled locomotive/handlebars.js  (2ms)  (pid 15564)
+Compiled locomotive/jquery-ui-timepicker-addon.js  (2ms)  (pid 15564)
+Compiled locomotive/liquid_mode.js  (1ms)  (pid 15564)
+Compiled locomotive/menu_toggler.js  (1ms)  (pid 15564)
+Compiled locomotive/resize.js  (1ms)  (pid 15564)
+Compiled locomotive/slugify.js  (0ms)  (pid 15564)
+Compiled locomotive/smartupdater.js  (1ms)  (pid 15564)
+Compiled locomotive/subscribe.js  (1ms)  (pid 15564)
+Compiled locomotive/tag-it.min.js  (1ms)  (pid 15564)
+Compiled locomotive/toggle.js  (0ms)  (pid 15564)
+Compiled locomotive/vendor.js  (773ms)  (pid 15564)
+Compiled locomotive/utils/aloha_settings.js  (451ms)  (pid 15564)
+Compiled locomotive/utils/core_ext.js  (1ms)  (pid 15564)
+Compiled locomotive/utils/growl.js  (0ms)  (pid 15564)
+Compiled locomotive/utils/handlebar_helpers.js  (406ms)  (pid 15564)
+Compiled locomotive/utils/tinymce_settings.js  (526ms)  (pid 15564)
+Compiled locomotive/models/account.js  (523ms)  (pid 15564)
+Compiled locomotive/models/content_asset.js  (436ms)  (pid 15564)
+Compiled locomotive/models/content_entry.js  (517ms)  (pid 15564)
+Compiled locomotive/models/content_type.js  (470ms)  (pid 15564)
+Compiled locomotive/models/custom_field.js  (460ms)  (pid 15564)
+Compiled locomotive/models/custom_field_select_option.js  (433ms)  (pid 15564)
+Compiled locomotive/models/domain.js  (453ms)  (pid 15564)
+Compiled locomotive/models/editable_element.js  (653ms)  (pid 15564)
+Compiled locomotive/models/membership.js  (424ms)  (pid 15564)
+Compiled locomotive/models/page.js  (447ms)  (pid 15564)
+Compiled locomotive/models/site.js  (463ms)  (pid 15564)
+Compiled locomotive/models/snippet.js  (406ms)  (pid 15564)
+Compiled locomotive/models/theme_asset.js  (556ms)  (pid 15564)
+Compiled locomotive/models/translation.js  (487ms)  (pid 15564)
+Compiled locomotive/views/application_view.js  (600ms)  (pid 15564)
+Compiled locomotive/views/content_assets/picker_item_view.js  (566ms)  (pid 15564)
+Compiled locomotive/views/shared/asset_picker_view.js  (500ms)  (pid 15564)
+Compiled locomotive/views/content_assets/picker_view.js  (1010ms)  (pid 15564)
+Compiled locomotive/views/shared/form_view.js  (703ms)  (pid 15564)
+Compiled locomotive/views/content_entries/_form_view.js  (1544ms)  (pid 15564)
+Compiled locomotive/views/content_entries/_popup_form_view.js  (518ms)  (pid 15564)
+Compiled locomotive/views/content_entries/edit_view.js  (396ms)  (pid 15564)
+Compiled locomotive/views/content_entries/index_view.js  (449ms)  (pid 15564)
+Compiled locomotive/views/content_entries/new_view.js  (456ms)  (pid 15564)
+Compiled locomotive/views/content_types/_form_view.js  (492ms)  (pid 15564)
+Compiled locomotive/views/content_types/custom_field_entry_view.js  (542ms)  (pid 15564)
+Compiled locomotive/views/content_types/custom_fields_view.js  (639ms)  (pid 15564)
+Compiled locomotive/views/content_types/edit_view.js  (432ms)  (pid 15564)
+Compiled locomotive/views/content_types/new_view.js  (399ms)  (pid 15564)
+Compiled locomotive/views/content_types/select_options_view.js  (494ms)  (pid 15564)
+Compiled locomotive/views/sites/domains_view.js  (502ms)  (pid 15564)
+Compiled locomotive/views/current_site/edit_view.js  (1139ms)  (pid 15564)
+Compiled locomotive/views/editable_elements/control_view.js  (415ms)  (pid 15564)
+Compiled locomotive/views/editable_elements/edit_all_view.js  (557ms)  (pid 15564)
+Compiled locomotive/views/editable_elements/file_view.js  (494ms)  (pid 15564)
+Compiled locomotive/views/editable_elements/text_view.js  (466ms)  (pid 15564)
+Compiled locomotive/views/inline_editor/application_view.js  (521ms)  (pid 15564)
+Compiled locomotive/views/inline_editor/toolbar_view.js  (689ms)  (pid 15564)
+Compiled locomotive/views/my_account/edit_view.js  (437ms)  (pid 15564)
+Compiled locomotive/views/pages/_form_view.js  (673ms)  (pid 15564)
+Compiled locomotive/views/pages/edit_view.js  (455ms)  (pid 15564)
+Compiled locomotive/views/pages/index_view.js  (414ms)  (pid 15564)
+Compiled locomotive/views/pages/list_view.js  (488ms)  (pid 15564)
+Compiled locomotive/views/pages/new_view.js  (398ms)  (pid 15564)
+Compiled locomotive/views/shared/fields/_relationship_view.js  (464ms)  (pid 15564)
+Compiled locomotive/views/shared/fields/belongs_to_view.js  (428ms)  (pid 15564)
+Compiled locomotive/views/shared/fields/file_view.js  (651ms)  (pid 15564)
+Compiled locomotive/views/shared/fields/has_many_view.js  (570ms)  (pid 15564)
+Compiled locomotive/views/shared/fields/many_to_many_view.js  (559ms)  (pid 15564)
+Compiled locomotive/views/shared/fields/select_view.js  (514ms)  (pid 15564)
+Compiled locomotive/views/shared/list_item_view.js  (442ms)  (pid 15564)
+Compiled locomotive/views/shared/list_view.js  (501ms)  (pid 15564)
+Compiled locomotive/views/sites/domain_entry_view.js  (685ms)  (pid 15564)
+Compiled locomotive/views/sites/membership_entry_view.js  (440ms)  (pid 15564)
+Compiled locomotive/views/sites/memberships_view.js  (447ms)  (pid 15564)
+Compiled locomotive/views/sites/new_view.js  (437ms)  (pid 15564)
+Compiled locomotive/views/snippets/_form_view.js  (488ms)  (pid 15564)
+Compiled locomotive/views/snippets/edit_view.js  (388ms)  (pid 15564)
+Compiled locomotive/views/snippets/list_item_view.js  (411ms)  (pid 15564)
+Compiled locomotive/views/snippets/list_view.js  (687ms)  (pid 15564)
+Compiled locomotive/views/snippets/new_view.js  (397ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/_form_view.js  (623ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/edit_view.js  (457ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/image_picker_view.js  (655ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/index_view.js  (531ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/list_item_view.js  (450ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/list_view.js  (440ms)  (pid 15564)
+Compiled locomotive/views/theme_assets/new_view.js  (447ms)  (pid 15564)
+Compiled locomotive/views/translations/_form_view.js  (400ms)  (pid 15564)
+Compiled locomotive/views/translations/edit_view.js  (453ms)  (pid 15564)
+Compiled locomotive/views/translations/new_view.js  (484ms)  (pid 15564)
+Compiled locomotive/application.js  (40543ms)  (pid 15564)
+Compiled locomotive.js  (42462ms)  (pid 15564)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head_before_backbone.html.haml (2.6ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{"memberships"=>{"$elemMatch"=>{:account_id=>"530900e6ae6ac250ff000001", :role=>:admin}}}} (1.1661ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head.html.haml (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_head.html.haml (50742.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/global_actions/show.html.haml (7.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_header.html.haml (80.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/main_menu/show.html.haml (13.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_footer.html.haml (5.7ms)
+Completed 200 OK in 53737.4ms (Views: 51344.9ms)
+
+
+Started GET "/assets/locomotive.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:07 +0100
+Served asset /locomotive.css - 200 OK (222ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/blueprint/screen.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/locomotive/jquery/ui.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/jquery/ui.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/jquery.tagit.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/jquery.tagit.css - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/font-awesome.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/formtastic.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /formtastic.css - 200 OK (8ms)
+
+
+Started GET "/assets/select2/select2.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /select2/select2.css - 200 OK (6ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /codemirror.css - 200 OK (9ms)
+
+
+Started GET "/assets/codemirror/themes/neat.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /codemirror/themes/neat.css - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/toggle.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/toggle.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/liquid_mode.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/shared/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/shared/_helpers.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/shared/_picker.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/shared/_picker.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/shared/common.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/shared/common.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/shared/content_locale_picker.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/shared/content_locale_picker.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/shared/growl.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/shared/growl.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/_box.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/_box.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/_buttons.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/_buttons.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/application.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/application.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/codemirror_changes.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/codemirror_changes.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/content_assets.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/content_assets.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/datepicker.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/datepicker.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/dialog_changes.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/dialog_changes.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/editable_elements.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/editable_elements.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/formtastic_changes.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/formtastic_changes.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/layout.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/layout.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/sub.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/menu/sub.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/main.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/menu/main.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/default.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/menu/default.css - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/menu.css - 200 OK (22ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_colors.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/menu/_colors.css - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/menu/_helpers.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/pagination.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/pagination.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/sites_picker.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/sites_picker.css - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/tagit_changes.css?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /locomotive/backoffice/tagit_changes.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:08 +0100
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /jquery-ui.js - 200 OK (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /jquery_ujs.js - 200 OK (8ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /underscore.js - 200 OK (8ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /backbone.js - 200 OK (9ms)
+
+
+Started GET "/assets/codemirror.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /codemirror.js - 200 OK (10ms)
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /tinymce/preinit.js - 200 OK (6ms)
+
+
+Started GET "/assets/tinymce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /tinymce/jquery.tinymce.js - 200 OK (6ms)
+
+
+Started GET "/assets/tinymce/tiny_mce.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /tinymce/tiny_mce.js - 200 OK (10ms)
+
+
+Started GET "/assets/tinymce-jquery.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /tinymce-jquery.js - 200 OK (14ms)
+
+
+Started GET "/assets/select2/select2.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /select2/select2.js - 200 OK (6ms)
+
+
+Started GET "/assets/codemirror/addons/mode/overlay.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /codemirror/addons/mode/overlay.js - 200 OK (8ms)
+
+
+Started GET "/assets/codemirror/modes/css.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /codemirror/modes/css.js - 200 OK (11ms)
+
+
+Started GET "/assets/codemirror/modes/javascript.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /codemirror/modes/javascript.js - 200 OK (9ms)
+
+
+Started GET "/assets/codemirror/modes/xml.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /codemirror/modes/xml.js - 200 OK (8ms)
+
+
+Started GET "/assets/codemirror/modes/htmlmixed.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /codemirror/modes/htmlmixed.js - 200 OK (9ms)
+
+
+Started GET "/assets/locomotive/ICanHandlebarz.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/ICanHandlebarz.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backbone.modelbinding.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/backbone.modelbinding.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/backbone.sync.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/backbone.sync.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/cmd.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/cmd.js - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/cookies.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/cookies.js - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/datepicker_i18n.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/datepicker_i18n.js - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/editable_field.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/editable_field.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/form_submit_notification.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/form_submit_notification.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/growl.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/growl.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/handlebars.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/handlebars.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/jquery-ui-timepicker-addon.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/jquery-ui-timepicker-addon.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/liquid_mode.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/menu_toggler.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/menu_toggler.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/resize.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/resize.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/slugify.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/slugify.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/smartupdater.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/smartupdater.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/subscribe.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/subscribe.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/tag-it.min.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/tag-it.min.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/toggle.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/toggle.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/vendor.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:09 +0100
+Served asset /locomotive/vendor.js - 200 OK (48ms)
+
+
+Started GET "/assets/locomotive/application.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/application.js - 200 OK (341ms)
+
+
+Started GET "/assets/locomotive/utils/aloha_settings.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/utils/aloha_settings.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/utils/core_ext.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/utils/core_ext.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/utils/growl.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/utils/growl.js - 200 OK (4ms)
+
+
+Started GET "/assets/locomotive/utils/handlebar_helpers.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/utils/handlebar_helpers.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/utils/tinymce_settings.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/utils/tinymce_settings.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/account.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/account.js - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/models/content_asset.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/content_asset.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/models/content_entry.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/content_entry.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/content_type.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/content_type.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/custom_field.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/custom_field.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/custom_field_select_option.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/custom_field_select_option.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/domain.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/domain.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/models/editable_element.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/editable_element.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/membership.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/membership.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/models/page.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/page.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/models/site.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/site.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/models/snippet.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/snippet.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/models/theme_asset.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/theme_asset.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/models/translation.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/models/translation.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:10 +0100
+Served asset /locomotive/views/application_view.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_assets/picker_item_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/shared/asset_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/asset_picker_view.js - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_assets/picker_view.js - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/views/shared/form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/form_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_entries/_form_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_popup_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_entries/_popup_form_view.js - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_entries/edit_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_entries/index_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_entries/new_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_types/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_types/_form_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_field_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_types/custom_field_entry_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_fields_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_types/custom_fields_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_types/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_types/edit_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_types/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_types/new_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/content_types/select_options_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/content_types/select_options_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/sites/domains_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/sites/domains_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/current_site/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/current_site/edit_view.js - 200 OK (9ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/control_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/editable_elements/control_view.js - 200 OK (4ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/edit_all_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/editable_elements/edit_all_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/editable_elements/file_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/text_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/editable_elements/text_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/inline_editor/application_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/toolbar_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/inline_editor/toolbar_view.js - 200 OK (4ms)
+
+
+Started GET "/assets/locomotive/views/my_account/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/my_account/edit_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/pages/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/pages/_form_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/pages/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/pages/edit_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/pages/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/pages/index_view.js - 200 OK (4ms)
+
+
+Started GET "/assets/locomotive/views/pages/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/pages/list_view.js - 200 OK (4ms)
+
+
+Started GET "/assets/locomotive/views/pages/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/pages/new_view.js - 200 OK (4ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/_relationship_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/fields/_relationship_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/belongs_to_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/fields/belongs_to_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/fields/file_view.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/has_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/fields/has_many_view.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/many_to_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/fields/many_to_many_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/select_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/fields/select_view.js - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/list_item_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/shared/list_view.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/views/sites/domain_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/sites/domain_entry_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/sites/membership_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:11 +0100
+Served asset /locomotive/views/sites/membership_entry_view.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/views/sites/memberships_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/sites/memberships_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/sites/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/sites/new_view.js - 200 OK (9ms)
+
+
+Started GET "/assets/locomotive/views/snippets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/snippets/_form_view.js - 200 OK (9ms)
+
+
+Started GET "/assets/locomotive/views/snippets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/snippets/edit_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/snippets/list_item_view.js - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/snippets/list_view.js - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/views/snippets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/snippets/new_view.js - 200 OK (6ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/_form_view.js - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/edit_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/image_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/image_picker_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/index_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/list_item_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/list_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/theme_assets/new_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/translations/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/translations/_form_view.js - 200 OK (7ms)
+
+
+Started GET "/assets/locomotive/views/translations/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/translations/edit_view.js - 200 OK (5ms)
+
+
+Started GET "/assets/locomotive/views/translations/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive/views/translations/new_view.js - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive.js?body=1" for 127.0.0.1 at 2014-02-22 20:59:12 +0100
+Served asset /locomotive.js - 200 OK (590ms)
+
+
+Started GET "/assets/locomotive/fontawesome-webfont.woff" for 127.0.0.1 at 2014-02-22 20:59:14 +0100
+Served asset /locomotive/fontawesome-webfont.woff - 200 OK (18ms)
+
+
+Started GET "/assets/locomotive/background/body.png" for 127.0.0.1 at 2014-02-22 20:59:14 +0100
+Served asset /locomotive/background/body.png - 304 Not Modified (7ms)
+
+
+Started GET "/assets/locomotive/nocoffee.png" for 127.0.0.1 at 2014-02-22 20:59:14 +0100
+Served asset /locomotive/nocoffee.png - 200 OK (19ms)
+
+
+Started GET "/locomotive/current_site/edit" for 127.0.0.1 at 2014-02-22 21:00:35 +0100
+Processing by Locomotive::CurrentSiteController#edit as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.4098ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>"530900e6ae6ac250ff000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.9081ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (1.2002ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/sub_menu/show.html.haml (5.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/sites/_domains.html.haml (8.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/sites/_memberships.html.haml (10.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/current_site/_form.html.haml (2350.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_form_actions.html.haml (7.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/current_site/edit.html.haml within /locomotive/layouts/application (2462.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head_before_backbone.html.haml (0.1ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{"memberships"=>{"$elemMatch"=>{:account_id=>"530900e6ae6ac250ff000001", :role=>:admin}}}} (1.1849ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head.html.haml (0.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_head.html.haml (123.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/global_actions/show.html.haml (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_header.html.haml (34.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/main_menu/show.html.haml (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 2710.5ms (Views: 2675.3ms)
+
+
+Started GET "/assets/locomotive.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/blueprint/screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery/ui.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/jquery/ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery.tagit.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/jquery.tagit.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/formtastic.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /formtastic.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2/select2.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /select2/select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/neat.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /codemirror/themes/neat.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/toggle.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/toggle.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/liquid_mode.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/shared/_helpers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/shared/_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/common.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/shared/common.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/content_locale_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/shared/content_locale_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/growl.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/shared/growl.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/_box.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/_box.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/_buttons.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/_buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/application.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/codemirror_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/codemirror_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/content_assets.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/content_assets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/datepicker.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/dialog_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/dialog_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/editable_elements.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/editable_elements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/formtastic_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/formtastic_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/layout.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/sub.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/menu/sub.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/main.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/menu/main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/default.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/menu/default.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/menu.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_colors.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/menu/_colors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/menu/_helpers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/pagination.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/pagination.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/sites_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/sites_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/tagit_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /locomotive/backoffice/tagit_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /jquery-ui.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /underscore.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:38 +0100
+Served asset /backbone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /codemirror.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /tinymce/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tinymce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /tinymce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tinymce/tiny_mce.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /tinymce/tiny_mce.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tinymce-jquery.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /tinymce-jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/select2/select2.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /select2/select2.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/codemirror/addons/mode/overlay.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /codemirror/addons/mode/overlay.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/css.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /codemirror/modes/css.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/javascript.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /codemirror/modes/javascript.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/xml.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /codemirror/modes/xml.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/htmlmixed.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /codemirror/modes/htmlmixed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/ICanHandlebarz.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/ICanHandlebarz.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backbone.modelbinding.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/backbone.modelbinding.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backbone.sync.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/backbone.sync.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/cmd.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/cmd.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/cookies.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/cookies.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/datepicker_i18n.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/datepicker_i18n.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/editable_field.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/editable_field.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/form_submit_notification.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/form_submit_notification.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/growl.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/growl.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/handlebars.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/handlebars.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery-ui-timepicker-addon.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/jquery-ui-timepicker-addon.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/liquid_mode.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/menu_toggler.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/menu_toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/resize.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/resize.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/slugify.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/slugify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/smartupdater.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/smartupdater.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/subscribe.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/subscribe.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/tag-it.min.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/tag-it.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/toggle.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/toggle.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/vendor.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/vendor.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/locomotive/application.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/locomotive/utils/aloha_settings.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/utils/aloha_settings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/core_ext.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/utils/core_ext.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/growl.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/utils/growl.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/handlebar_helpers.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/utils/handlebar_helpers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/tinymce_settings.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/utils/tinymce_settings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/account.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/account.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_asset.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/content_asset.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_entry.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/content_entry.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_type.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/content_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/custom_field.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/custom_field.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/custom_field_select_option.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/custom_field_select_option.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/domain.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/domain.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/editable_element.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/editable_element.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/membership.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:39 +0100
+Served asset /locomotive/models/membership.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/page.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/models/page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/site.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/models/site.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/snippet.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/models/snippet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/theme_asset.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/models/theme_asset.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/translation.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/models/translation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/application_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_assets/picker_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/asset_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/asset_picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_assets/picker_view.js - 304 Not Modified (119ms)
+
+
+Started GET "/assets/locomotive/views/shared/form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_entries/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_popup_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_entries/_popup_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_entries/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_entries/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_entries/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_types/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_field_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_types/custom_field_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_fields_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_types/custom_fields_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_types/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_types/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/select_options_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/content_types/select_options_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/domains_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/sites/domains_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/current_site/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/current_site/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/control_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/editable_elements/control_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/edit_all_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/editable_elements/edit_all_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/editable_elements/file_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/text_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/editable_elements/text_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/inline_editor/application_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/toolbar_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/inline_editor/toolbar_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/my_account/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/my_account/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/pages/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/pages/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/pages/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/pages/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/pages/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/_relationship_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/fields/_relationship_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/belongs_to_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/fields/belongs_to_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/fields/file_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/has_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/fields/has_many_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/many_to_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/fields/many_to_many_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/select_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/fields/select_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/shared/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/domain_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/sites/domain_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/membership_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/sites/membership_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/memberships_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/sites/memberships_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/sites/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/snippets/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/snippets/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/snippets/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/snippets/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/snippets/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/theme_assets/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/theme_assets/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/image_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/theme_assets/image_picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/theme_assets/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:40 +0100
+Served asset /locomotive/views/theme_assets/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/views/theme_assets/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/views/theme_assets/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/views/translations/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/views/translations/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/views/translations/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive.js?body=1" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive.js - 304 Not Modified (157ms)
+
+
+Started GET "/assets/locomotive/icons/flags/de.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/de.png - 200 OK (15ms)
+
+
+Started GET "/assets/locomotive/icons/flags/en.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/en.png - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/icons/flags/fr.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/fr.png - 200 OK (10ms)
+
+
+Started GET "/assets/locomotive/icons/flags/pl.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/pl.png - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/icons/flags/pt-BR.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/pt-BR.png - 200 OK (12ms)
+
+
+Started GET "/assets/locomotive/icons/flags/it.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/it.png - 200 OK (9ms)
+
+
+Started GET "/assets/locomotive/icons/flags/nl.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/nl.png - 200 OK (9ms)
+
+
+Started GET "/assets/locomotive/icons/flags/nb.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/nb.png - 200 OK (17ms)
+
+
+Started GET "/assets/locomotive/icons/flags/es.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/es.png - 200 OK (140ms)
+
+
+Started GET "/assets/locomotive/icons/flags/ru.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/ru.png - 200 OK (20ms)
+
+
+Started GET "/assets/locomotive/icons/flags/et.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/et.png - 200 OK (13ms)
+
+
+Started GET "/assets/locomotive/icons/flags/ja.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/ja.png - 200 OK (16ms)
+
+
+Started GET "/assets/locomotive/icons/flags/zh-CN.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/zh-CN.png - 200 OK (15ms)
+
+
+Started GET "/assets/locomotive/icons/flags/cs.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/cs.png - 200 OK (13ms)
+
+
+Started GET "/assets/locomotive/icons/flags/bg.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/icons/flags/bg.png - 200 OK (8ms)
+
+
+Started GET "/assets/locomotive/background/body.png" for 127.0.0.1 at 2014-02-22 21:00:41 +0100
+Served asset /locomotive/background/body.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/form/input-sep.png" for 127.0.0.1 at 2014-02-22 21:00:42 +0100
+Served asset /locomotive/form/input-sep.png - 200 OK (14ms)
+
+
+Started GET "/locomotive/pages" for 127.0.0.1 at 2014-02-22 21:01:01 +0100
+Processing by Locomotive::PagesController#index as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.5604ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>"530900e6ae6ac250ff000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.3025ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (2.2783ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"depth"=>1, "position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (1.9009ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"position"=>1, "updated_at"=>-1}} flags=[:slave_ok] limit=5 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (2.2149ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.9360ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.6275ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/menu/_contents.html.haml (19.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/actions/_contents.html.haml (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/pages/_page.html.haml (5.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/pages/index.html.haml within /locomotive/layouts/application (36.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head_before_backbone.html.haml (0.2ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{"memberships"=>{"$elemMatch"=>{:account_id=>"530900e6ae6ac250ff000001", :role=>:admin}}}} (1.2109ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head.html.haml (0.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_head.html.haml (256.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/global_actions/show.html.haml (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_header.html.haml (29.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/main_menu/show.html.haml (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_footer.html.haml (0.6ms)
+Completed 200 OK in 418.8ms (Views: 364.4ms)
+
+
+Started GET "/assets/locomotive.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:01 +0100
+Served asset /locomotive.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:01 +0100
+Served asset /locomotive/blueprint/screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery/ui.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:01 +0100
+Served asset /locomotive/jquery/ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery.tagit.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:01 +0100
+Served asset /locomotive/jquery.tagit.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/formtastic.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /formtastic.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2/select2.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /select2/select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/neat.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror/themes/neat.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/toggle.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/toggle.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/liquid_mode.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/shared/_helpers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/shared/_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/common.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/shared/common.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/content_locale_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/shared/content_locale_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/growl.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/shared/growl.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/_box.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/_box.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/_buttons.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/_buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/application.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/codemirror_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/codemirror_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/content_assets.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/content_assets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/datepicker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/dialog_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/dialog_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/editable_elements.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/editable_elements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/formtastic_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/formtastic_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/layout.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/sub.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/menu/sub.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/main.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/menu/main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/default.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/menu/default.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/menu.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_colors.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/menu/_colors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/menu/_helpers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/pagination.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/pagination.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/locomotive/backoffice/sites_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/sites_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/tagit_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backoffice/tagit_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /jquery-ui.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /underscore.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /backbone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /tinymce/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tinymce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /tinymce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tinymce/tiny_mce.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /tinymce/tiny_mce.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tinymce-jquery.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /tinymce-jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/select2/select2.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /select2/select2.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/codemirror/addons/mode/overlay.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror/addons/mode/overlay.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/css.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror/modes/css.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/javascript.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror/modes/javascript.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/xml.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror/modes/xml.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/htmlmixed.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /codemirror/modes/htmlmixed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/ICanHandlebarz.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/ICanHandlebarz.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backbone.modelbinding.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backbone.modelbinding.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backbone.sync.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/backbone.sync.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/cmd.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/cmd.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/cookies.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/cookies.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/datepicker_i18n.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/datepicker_i18n.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/editable_field.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/editable_field.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/form_submit_notification.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:02 +0100
+Served asset /locomotive/form_submit_notification.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/growl.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/growl.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/handlebars.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/handlebars.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery-ui-timepicker-addon.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/jquery-ui-timepicker-addon.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/liquid_mode.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/menu_toggler.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/menu_toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/resize.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/resize.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/slugify.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/slugify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/smartupdater.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/smartupdater.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/subscribe.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/subscribe.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/tag-it.min.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/tag-it.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/toggle.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/toggle.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/vendor.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/vendor.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/locomotive/application.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/application.js - 304 Not Modified (148ms)
+
+
+Started GET "/assets/locomotive/utils/aloha_settings.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/utils/aloha_settings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/core_ext.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/utils/core_ext.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/growl.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/utils/growl.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/handlebar_helpers.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/utils/handlebar_helpers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/tinymce_settings.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/utils/tinymce_settings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/account.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/account.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_asset.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/content_asset.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_entry.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/content_entry.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_type.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/content_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/custom_field.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/custom_field.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/custom_field_select_option.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/custom_field_select_option.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/domain.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/domain.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/editable_element.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/editable_element.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/membership.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/membership.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/page.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/site.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/site.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/snippet.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/snippet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/theme_asset.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/theme_asset.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/translation.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/models/translation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/application_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_assets/picker_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/asset_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/shared/asset_picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_assets/picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/shared/form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_entries/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_popup_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_entries/_popup_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_entries/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_entries/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_entries/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_types/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_field_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_types/custom_field_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_fields_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_types/custom_fields_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_types/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_types/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/select_options_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/content_types/select_options_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/domains_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/sites/domains_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/current_site/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/current_site/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/control_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/editable_elements/control_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/edit_all_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/editable_elements/edit_all_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/editable_elements/file_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/text_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/editable_elements/text_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:03 +0100
+Served asset /locomotive/views/inline_editor/application_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/toolbar_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/inline_editor/toolbar_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/my_account/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/my_account/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/pages/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/pages/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/pages/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/pages/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/pages/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/_relationship_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/fields/_relationship_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/belongs_to_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/fields/belongs_to_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/fields/file_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/has_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/fields/has_many_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/many_to_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/fields/many_to_many_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/select_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/fields/select_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/shared/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/domain_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/sites/domain_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/membership_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/sites/membership_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/memberships_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/sites/memberships_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/sites/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/snippets/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/snippets/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/snippets/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/snippets/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/snippets/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/image_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/image_picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/theme_assets/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/translations/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/translations/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/views/translations/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/locomotive/background/body.png" for 127.0.0.1 at 2014-02-22 21:01:04 +0100
+Served asset /locomotive/background/body.png - 304 Not Modified (0ms)
+
+
+Started GET "/locomotive/content_types/new" for 127.0.0.1 at 2014-02-22 21:01:12 +0100
+Processing by Locomotive::ContentTypesController#new as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.1153ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>"530900e6ae6ac250ff000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.7539ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"_id"=>{"$in"=>["530900e6ae6ac250ff000001"]}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.9537ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"position"=>1, "updated_at"=>-1}} flags=[:slave_ok] limit=5 skip=0 batch_size=nil fields={"serialized_template.de"=>0, "template_dependencies.de"=>0, "snippet_dependencies.de"=>0, "templatized_from_parent"=>0, "target_klass_name"=>0, "redirect_url.de"=>0, "redirect_type"=>0, "seo_title.de"=>0, "meta_keywords.de"=>0, "meta_description.de"=>0, "handle"=>0, "raw_template.de"=>0, "locales"=>0, "cache_strategy"=>0} (1.7631ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.8454ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002"}, "$orderby"=>{"updated_at"=>-1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields={"site_id"=>1, "name"=>1, "slug"=>1, "label_field_name"=>1} (0.6452ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/menu/_contents.html.haml (15.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/actions/_contents.html.haml (1.2ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"site_id"=>"530900f5ae6ac250ff000002"} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.8345ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/custom_fields/_select_templates.html.haml (7.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/custom_fields/_form.html.haml (333.1ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_content_types selector={"site_id"=>"530900f5ae6ac250ff000002", "entries_custom_fields.type"=>{"$in"=>["belongs_to", "many_to_many"]}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (0.9503ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/content_types/_form.html.haml (386.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_form_actions.html.haml (7.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/content_types/new.html.haml within /locomotive/layouts/application (433.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head_before_backbone.html.haml (0.2ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=locomotive_dev command={:count=>"locomotive_sites", :query=>{"memberships"=>{"$elemMatch"=>{:account_id=>"530900e6ae6ac250ff000001", :role=>:admin}}}} (1.1547ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_main_app_head.html.haml (0.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_head.html.haml (123.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/global_actions/show.html.haml (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_header.html.haml (27.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/cells/locomotive/main_menu/show.html.haml (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/locomotive_cms-2.4.1/app/views/locomotive/shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 659.1ms (Views: 627.0ms)
+
+
+Started GET "/assets/locomotive.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive.css - 304 Not Modified (148ms)
+
+
+Started GET "/assets/locomotive/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/blueprint/screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery/ui.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/jquery/ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery.tagit.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/jquery.tagit.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/font-awesome.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/formtastic.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /formtastic.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2/select2.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /select2/select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/neat.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /codemirror/themes/neat.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/toggle.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/toggle.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/liquid_mode.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/shared/_helpers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/shared/_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/common.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/shared/common.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/content_locale_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/shared/content_locale_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/shared/growl.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/shared/growl.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/_box.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/_box.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/_buttons.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/_buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/application.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/codemirror_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/codemirror_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/content_assets.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/content_assets.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locomotive/backoffice/datepicker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/dialog_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/dialog_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/editable_elements.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/editable_elements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/formtastic_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/formtastic_changes.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locomotive/backoffice/layout.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/sub.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/menu/sub.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/main.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/menu/main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/default.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/menu/default.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/menu.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_colors.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/menu/_colors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/menu/_helpers.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/menu/_helpers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/pagination.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/pagination.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/sites_picker.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/sites_picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backoffice/tagit_changes.css?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /locomotive/backoffice/tagit_changes.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /jquery-ui.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /underscore.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /backbone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /codemirror.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tinymce/preinit.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /tinymce/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tinymce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:13 +0100
+Served asset /tinymce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tinymce/tiny_mce.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /tinymce/tiny_mce.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tinymce-jquery.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /tinymce-jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/select2/select2.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /select2/select2.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/codemirror/addons/mode/overlay.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /codemirror/addons/mode/overlay.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/css.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /codemirror/modes/css.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/javascript.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /codemirror/modes/javascript.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/xml.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /codemirror/modes/xml.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/modes/htmlmixed.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /codemirror/modes/htmlmixed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/ICanHandlebarz.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/ICanHandlebarz.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backbone.modelbinding.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/backbone.modelbinding.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/backbone.sync.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/backbone.sync.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/cmd.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/cmd.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/cookies.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/cookies.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/datepicker_i18n.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/datepicker_i18n.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/editable_field.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/editable_field.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/form_submit_notification.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/form_submit_notification.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/growl.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/growl.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/handlebars.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/handlebars.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/jquery-ui-timepicker-addon.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/jquery-ui-timepicker-addon.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/liquid_mode.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/liquid_mode.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/menu_toggler.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/menu_toggler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/resize.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/resize.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/slugify.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/slugify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/smartupdater.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/smartupdater.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/subscribe.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/subscribe.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/tag-it.min.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/tag-it.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/toggle.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/toggle.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/vendor.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/vendor.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/locomotive/application.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/locomotive/utils/aloha_settings.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/utils/aloha_settings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/core_ext.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/utils/core_ext.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/growl.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/utils/growl.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/handlebar_helpers.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/utils/handlebar_helpers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/utils/tinymce_settings.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/utils/tinymce_settings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/account.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/account.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_asset.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/content_asset.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_entry.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/content_entry.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/content_type.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/content_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/custom_field.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/custom_field.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/custom_field_select_option.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/custom_field_select_option.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/domain.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/domain.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/editable_element.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/editable_element.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/membership.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/membership.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/page.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:14 +0100
+Served asset /locomotive/models/page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/site.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/models/site.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/snippet.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/models/snippet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/theme_asset.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/models/theme_asset.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/models/translation.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/models/translation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/application_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_assets/picker_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/asset_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/asset_picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_assets/picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_assets/picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_entries/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/_popup_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_entries/_popup_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_entries/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_entries/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_entries/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_entries/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_types/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_field_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_types/custom_field_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/custom_fields_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_types/custom_fields_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_types/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_types/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/content_types/select_options_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/content_types/select_options_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/domains_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/sites/domains_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/current_site/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/current_site/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/control_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/editable_elements/control_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/edit_all_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/editable_elements/edit_all_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/editable_elements/file_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/editable_elements/text_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/editable_elements/text_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/application_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/inline_editor/application_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/inline_editor/toolbar_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/inline_editor/toolbar_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/my_account/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/my_account/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/pages/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/pages/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/pages/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/pages/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/pages/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/pages/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/_relationship_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/fields/_relationship_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/belongs_to_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/fields/belongs_to_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/file_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/fields/file_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/has_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/fields/has_many_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/many_to_many_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/fields/many_to_many_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/fields/select_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/fields/select_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/shared/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/shared/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/domain_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/sites/domain_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/membership_entry_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/sites/membership_entry_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/memberships_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/sites/memberships_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/sites/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/sites/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/snippets/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/snippets/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/snippets/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/snippets/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/snippets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/snippets/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/theme_assets/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:15 +0100
+Served asset /locomotive/views/theme_assets/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/image_picker_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/theme_assets/image_picker_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/index_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/theme_assets/index_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_item_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/theme_assets/list_item_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/list_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/theme_assets/list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/theme_assets/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/theme_assets/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/_form_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/translations/_form_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/edit_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/translations/edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive/views/translations/new_view.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/views/translations/new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locomotive.js?body=1" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/locomotive/background/body.png" for 127.0.0.1 at 2014-02-22 21:01:16 +0100
+Served asset /locomotive/background/body.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-22 21:01:25 +0100
+Processing by Locomotive::Public::PagesController#show as HTML
+[LocomotiveCMS] [fetch site] host = localhost / localhost:8080
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_sites selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (1.2076ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_accounts selector={"$query"=>{"_id"=>"530900e6ae6ac250ff000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (0.8514ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=locomotive_dev collection=locomotive_pages selector={"$query"=>{"site_id"=>"530900f5ae6ac250ff000002", "depth"=>0, "$or"=>[{"fullpath.de"=>{"$in"=>["index"]}}, {"fullpath.en"=>{"$in"=>["index"]}}]}, "$orderby"=>{"position"=>1}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (1.2474ms)
+  Rendered text template (0.0ms)
+Completed 200 OK in 148.9ms (Views: 134.9ms)
